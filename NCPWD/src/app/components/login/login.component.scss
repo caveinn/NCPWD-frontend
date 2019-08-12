@@ -1,0 +1,62 @@
+.card{
+  margin:auto;
+  width:40%;
+  margin-top: 9%;
+  background-color: #333;
+  border-radius: 0;
+  color: white;
+}
+
+.card-body{
+  margin-left: 5%;
+}
+
+.card .form-group{
+  width: 92%;
+}
+
+.card input{
+  background-color: #333;
+  border-top: none;
+  border-left: none;
+  color:#ffffff;
+  border-right: none;
+  border-bottom-color: #5c5c5c;
+  width: 100%;
+  outline:none;
+  &:active{
+    border-bottom-color: #02963b;
+  }
+  &:focus{
+    border-bottom-color: #02963b;
+    color:#fffff0;
+  }
+}
+
+input :active{
+  border: none;
+}
+
+
+.card label{
+  display: block;
+  color:  #5c5c5c;
+}
+
+form a:link, a:visited{
+  text-decoration: none;
+  color: #ffffff;
+  margin-top:0.5em;
+  float: right;
+  margin-right: 7%;
+}
+
+form button{
+  border-radius: 0;
+
+  background-color: #02963b;
+  border:none;
+}
+
+
+
