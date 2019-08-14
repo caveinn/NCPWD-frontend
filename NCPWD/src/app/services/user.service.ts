@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable, of} from 'rxjs';
-import {User} from '../user';
+import {User} from '../models/user';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import {map} from 'rxjs/operators';
-import  { environment } from '../../environments/environment';
+import { environment } from '../../environments/environment';
+import { Profile} from '../models/profile';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class UserService {
 
   signUp(user: User): Observable<User> {
     return this.http.post<User>(
-      'http://127.0.1:8000/api/users/', user
+      `${environment.apiUrl}/api/users/`, user
 , this.httpOptions);
   }
 
@@ -32,6 +33,10 @@ export class UserService {
     this.currentUserSubject.next(user);
     return user;
     }));
+  }
+
+  getProfiles(): Observable<Profile[]> {
+    return this.http.get<Profile[]>(`${environment.apiUrl}/api/profiles/`, this.httpOptions);
   }
 
 

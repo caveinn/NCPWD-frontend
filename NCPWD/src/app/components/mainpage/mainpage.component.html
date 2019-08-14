@@ -1,1 +1,41 @@
-<p>mainpage works!</p>
+<div class="trial card">
+  <h3 class="card-header ">Topics</h3>
+  <div class="card-body">
+
+    <div class="row topic-item" *ngFor="let topic of topics">
+        <div class="col">
+          {{topic.title}}
+        </div>
+      <div class="col-8">
+        {{topic.description}}
+      </div>
+      <div class="col">
+        Kevin
+      </div>
+    </div>
+  </div>
+</div>
+<div class="trial card">
+  <h3 class="card-header ">Profiles</h3>
+  <div class="card-body">
+
+    <div class="row topic-item" *ngFor="let profile of profiles">
+        <div class="col">
+          {{profile.firstname}}
+        </div>
+      <div class="col">
+        {{profile.lastname}}
+      </div>
+      <div class="col">
+        {{profile.location}}
+      </div>
+       <div class="col">
+        {{profile.date_of_birth}}
+      </div>
+      <div class="col">
+        {{profile.national_id}}
+      </div>
+    </div>
+  </div>
+</div>
+

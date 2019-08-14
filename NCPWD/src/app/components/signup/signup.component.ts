@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {User} from '../../user';
+import {User} from '../../models/user';
 import {UserService} from '../../services/user.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -10,14 +11,13 @@ import {UserService} from '../../services/user.service';
 export class SignupComponent implements OnInit {
   submitted = false;
   user = new User('', '', '');
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private  router: Router) { }
 
   ngOnInit() {
   }
   onSubmit() {
     this.submitted = true;
-    this.userService.signUp(this.user).subscribe(user => console.log(user))
-    console.log('submitted');
+    this.userService.signUp(this.user).subscribe(user => this.router.navigate(['login']));
   }
 
 }
